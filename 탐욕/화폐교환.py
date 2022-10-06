@@ -18,14 +18,38 @@
       ********************************************************
 """
 
+from sympy import N
+
+
 class Solution:
    def solution(self, money):
       title = "### 화폐교환 ###"
       aster = "*" *30
-      five = int(money / 50000)
-      one = (money / 10000)
       answer = f"요청금액 : {money} 원"
-      return f"{title} \n {aster} \n {answer} 5만원{five} 매 \n 1만원{one} \n {aster}"
+      unit = [50000,10000, 5000, 1000, 500, 100, 50, 10]
+      for i in unit:
+         print(i)
+      count = money // i
+      money= money % i
+
+      for i in unit:
+         print (i)
+
+      '''
+      result = (
+         f"{title} \n {aster} \n {answer} \n {aster} \n"
+         f"5만원 : {answer2}매 \n"
+         f"1만원 : {answer3}매 \n"
+         f"5천원 : {answer4}매 \n"
+         f"1천원 : {answer5}매 \n"
+         f"오백원 : {answer6}매 \n"
+         f"백원 : {answer7}매 \n"
+         f"오십원 : {answer8}매 \n"
+         f"십원 : {answer9}매 \n"
+      )
+     '''
+      
+      return result
 
 if __name__=="__main__":
    solution = Solution()
